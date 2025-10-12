@@ -1,34 +1,52 @@
 # Static-Analysis-and-CallGraph_Java
 # TP1 – Analyse Statique (Partie 2)
 
----
-
-## ⚙️ Installation
-### 1️. Cloner le dépôt
+## 1️. Cloner le dépôt
 ```bash
 git clone https://github.com/Imene-Amirat/Static-Analysis-and-CallGraph_Java.git
 cd Static-Analysis-and-CallGraph_Java
 ```
 
-### 2️. Ouvrir le projet dans un IDE
+## 2️. Ouvrir le projet dans un IDE
 
-- Ouvrir le projet dans IntelliJ IDEA ou Eclipse.
+  1. Ouvrir le projet dans IntelliJ IDEA ou Eclipse.
+  2. Vérifier que le JDK 17 (ou supérieur) est bien configuré.
+  3. S’assurer que le dossier source est src/main/java.
 
-- Vérifier que le JDK 17 (ou supérieur) est bien configuré.
+## 3. Points d’exécution principaux
 
-- S’assurer que le dossier source est src/main/java.
+### App.java — Question 1 : Statistiques
+- **But :**  
+Afficher les **métriques globales** du code source (nombre de classes, méthodes, lignes de code, attributs, top 10 %, etc.).
 
----
-### 3. Points d’exécution principaux
-## App.java — Question 1 : Statistiques
-Exécuter la classe org.example.App
-À lancer quand tu veux les métriques globales (totaux, moyennes, top 10%).
+- **Exécution :**
+  - Lancer la classe 
+  - Une interface Swing s’ouvre avec des **boutons latéraux Q1 → Q13**.  
+  - Chaque bouton correspond à une **question d’analyse** 
+  
+- **Utilisation :**  
+Cliquez sur chaque bouton (Q1 à Q13) pour afficher la réponse correspondante dans la zone “Résultats”.
 
-Sortie : tableau/texte clair Affichage des résultats sous forme de texte clair.
+- **Sortie :**  
+Affichage clair des métriques dans une interface Swing.
 
-## CallGraphGuiApp.java — Question 2 : Graphe d’appel
-Exécuter la classe org.example.CallGraphGuiApp
+### CallGraphGuiApp.java — Question 2 : Graphe d’appel
+- **But :**  
+Afficher le **graphe d’appel orienté** représentant les relations entre les méthodes du projet analysé.
 
-À lancer quand tu veux la visualisation interactive du graphe d’appel.
+- **Exécution :**
+  - Lancer la classe
+  - Une **fenêtre Swing** s’ouvre 
+  - chaque **nœud** représente une méthode (`Class#method`)
+  - les **flèches orientées** montrent les appels entre méthodes
+  - les **méthodes externes** (`<external>#...`) sont grisées
+  - la méthode **`ext#sqrt`** est surlignée en doré.
 
-Sortie : fenêtre avec nœuds & flèches ; clic pour voir les appels sortants du nœud.
+- **Sortie :**  
+Une visualisation interactive du graphe d’appel.
+
+## 4. Exemple de Statistique & graphe d'appel :
+<img width="1919" height="1016" alt="image" src="https://github.com/user-attachments/assets/e5a5b6d3-8c9c-43b3-887d-d98dedf2f67d" />
+
+<img width="1588" height="783" alt="Capture d'écran 2025-10-09 144245" src="https://github.com/user-attachments/assets/f9dd132e-cce8-4273-9844-b6a81923b6bc" />
+
