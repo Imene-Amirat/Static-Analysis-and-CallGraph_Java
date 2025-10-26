@@ -4,6 +4,10 @@ import org.example.visitor.MetricsCollector.FileMetrics;
 import java.util.*;
 import java.util.stream.*;
 
+/**
+ * Cette classe contient les calculs statistiques sur les métriques collectées
+ * par la classe MetricsCollector (nombre de classes, méthodes, attributs, etc.).
+ */
 public class StatisticsService {
     public static class ProjectMetrics {
         public int totalFiles;

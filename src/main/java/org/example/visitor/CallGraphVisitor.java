@@ -38,9 +38,13 @@ public class CallGraphVisitor extends ASTVisitor {
         edges.computeIfAbsent(key(currentClass, currentMethod), __ -> new LinkedHashSet<>());
         return true;
     }
-    @Override public void endVisit(MethodDeclaration node) { currentMethod = null; }
+    @Override public void endVisit(MethodDeclaration node) {
+        // Réinitialise la méthode courante à la fin de la visite
+        currentMethod = null;
+    }
 
     @Override public boolean visit(MethodInvocation node) {
+        // Ignore les appels hors d'une méthode (cas anormal)
         if (currentClass == null || currentMethod == null) return true;
 
         String targetClass = resolveTargetClass(node.getExpression());

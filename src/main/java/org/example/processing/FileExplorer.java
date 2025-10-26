@@ -7,6 +7,8 @@ import java.util.*;
 public class FileExplorer {
     public static List<Path> listJavaFiles(Path root) throws Exception {
         try (Stream<Path> s = Files.walk(root)) {
+
+            // renvoie la liste finale des fichiers trouvés
             return s.filter(p -> p.toString().endsWith(".java"))
                     .collect(Collectors.toList());
         }

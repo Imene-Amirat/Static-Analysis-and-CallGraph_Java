@@ -3,6 +3,8 @@ package org.example.processing;
 import java.util.Map;
 
 public class ResultPrinter {
+
+    // Affiche les statistiques globales du projet analysé
     public static void print(StatisticsService.ProjectMetrics pm, int thresholdX) {
         System.out.println("=== Résumé du projet ===");
         System.out.println("Fichiers analysés : " + pm.totalFiles);
