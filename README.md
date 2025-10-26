@@ -15,7 +15,7 @@ cd StaticAnalysis_CallGraph_CouplingGraph
 
 ## 3. Points d’exécution principaux
 
-### App.java — Question 1 : Statistiques
+### a) App.java — Question 1 : Statistiques
 - **But :**  
 Afficher les **métriques globales** du code source (nombre de classes, méthodes, lignes de code, attributs, top 10 %, etc.).
 
@@ -33,7 +33,7 @@ Cliquez sur chaque bouton (Q1 à Q13) pour afficher la réponse correspondante d
 - **Sortie :**  
 Affichage clair des métriques dans une interface Swing.
 
-### CallGraphGuiApp.java — Question 2 : Graphe d’appel
+### b) CallGraphGuiApp.java — Question 2 : Graphe d’appel
 - **But :**  
 Afficher le **graphe d’appel orienté** représentant les relations entre les méthodes du projet analysé.
 
@@ -50,7 +50,7 @@ Afficher le **graphe d’appel orienté** représentant les relations entre les 
 - **Sortie :**  
 Une visualisation interactive du graphe d’appel.
 
-### CouplingGraphGuiApp.java — Exercice 1 TP2
+### c) CouplingGraphGuiApp.java — Exercice 1 TP2
 - **But :**  
   Calculer et visualiser la force de couplage entre classes à partir du graphe d’appel.
 
@@ -68,7 +68,7 @@ Une visualisation interactive du graphe d’appel.
     - Les arêtes pondérées (0.4, 0.6, etc.)
     - Couplage élevé ⇒ arête plus épaisse
 
-### ClusteringGuiApp.java — Exercice 2 TP2
+### d) ClusteringGuiApp.java — Exercice 2 TP2
 - **But :**  
   Identifier les groupes de classes couplées (modules) en appliquant un clustering hiérarchique sur la matrice des couplages.
 
