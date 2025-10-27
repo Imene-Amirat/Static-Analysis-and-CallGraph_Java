@@ -79,8 +79,46 @@ Une visualisation interactive du graphe d’appel.
       - Dendrogramme : représentation hiérarchique des regroupements
       - Modules (CP) : affichage des modules détectés selon un seuil de couplage CP
 
+## 4. Analyse avec Spoon
+Le TP2 reprend les mêmes objectifs que le TP1, mais en utilisant la librairie Spoon
+pour analyser automatiquement le code source.
 
-## 4. Exemple de Statistique & graphe d'appel :
+  ### a) SpoonCallGraphExtractor.java
+- **But** : Utiliser Spoon pour parcourir le code source et extraire :
+  - les appels de méthodes (CtInvocation)
+  - les classes appelantes et appelées
+  
+- **Sortie** :
+  - Un graphe d’appels inter-classes
+  - Fichier CSV et DOT 
+
+### b) SpoonCouplingApp.java — Couplage via Spoon
+ - **But** : Calculer automatiquement le couplage entre classes depuis les invocations Spoon.
+ - **Résultats obtenus** :
+
+>>> TP2 – Couplage entre classes via Spoon
+Total relations inter-classes = 5
+Point -- Rectangle  -> count=3, weight=0.6000
+Circle -- Point     -> count=2, weight=0.4000
+
+- **Fichiers générés :** 
+  - coupling_tp2.csv — valeurs de couplage
+  - coupling_tp2.dot — graphe pour Graphviz
+
+### c) SpoonClusteringApp.java — Dendrogramme et modules
+
+- **But** : Appliquer un clustering hiérarchique (liaison moyenne) sur les résultats Spoon.
+- **Exemple de sortie :**
+>>> TP2 – Dendrogramme (liaison moyenne)
+      [merge sim=0.600] [Point, Rectangle]
+      [merge sim=0.200] [Circle, Point, Rectangle]
+      [merge sim=0.000] [Shape, Circle, Point, Rectangle]
+
+>>> Modules (CP=0.3, max=2)
+Module 1: {Shape}  avg=0.0000
+Module 2: {Circle, Point, Rectangle}  avg=0.3333
+
+## 5. Exemple de Statistique & graphe d'appel :
 <img width="1919" height="1016" alt="image" src="https://github.com/user-attachments/assets/e5a5b6d3-8c9c-43b3-887d-d98dedf2f67d" />
 
 <img width="1588" height="783" alt="Capture d'écran 2025-10-09 144245" src="https://github.com/user-attachments/assets/f9dd132e-cce8-4273-9844-b6a81923b6bc" />

@@ -1,0 +1,9 @@
+graph CouplingTP2 {
+  node [shape=box,style=rounded];
+  "Shape";
+  "Point";
+  "Rectangle";
+  "Circle";
+  "Circle" -- "Point" [label="0.400", penwidth=4.60];
+  "Point" -- "Rectangle" [label="0.600", penwidth=6.40];
+}
